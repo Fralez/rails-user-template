@@ -14,7 +14,7 @@ module Mutations
       user = nil
       if args[:id].present?
         ActiveRecord::Base.transaction do
-          user = User.find(args[:id])
+          user = User.find_by_id(args[:id])
           user.update!(**args.except(:id))
         end
       else
