@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Types
   class UserType < Types::BaseObject
     field :id, ID, null: false
@@ -5,5 +7,6 @@ module Types
     field :email, String, null: false
     field :binary_gender, Integer, null: false
     field :date_of_birth, GraphQL::Types::ISO8601DateTime, null: false
+    field :admin, Boolean, null: false
   end
 end
