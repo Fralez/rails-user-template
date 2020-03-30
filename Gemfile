@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'graphql'
 # Devise flexible authentication
 gem 'devise', '~> 4.7', '>= 4.7.1'
+# Paper trail versioning and auditing
+gem 'paper_trail'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -35,6 +37,12 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Loads .env files
   gem "dotenv-rails"
+  # RSpec integration
+  gem 'rspec-rails', '~> 4.0.0'
+  # Factory bot
+  gem "factory_bot_rails"
+  # Faker data mocking
+  gem 'faker', '~> 2.11'
 end
 
 group :development do
