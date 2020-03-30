@@ -7,7 +7,7 @@ module Resolvers
     argument :id, ID, required: false
 
     def resolve(id:)
-      # check_authentication!
+      check_authentication!
       user = ::User.find_by_id(id)
 
       return nil if user.nil?

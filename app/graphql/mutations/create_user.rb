@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 module Mutations
-  class CreateUser < BaseMutation
+  class CreateUser < Mutations::BaseMutation
     argument :id, ID, required: false
     argument :name, String, required: false
     argument :email, String, required: false
@@ -10,7 +12,7 @@ module Mutations
     field :user, Types::UserType, null: true
 
     def resolve(**args)
-      # check_authentication!
+      check_authentication!
       user = nil
       if args[:id].present?
         ActiveRecord::Base.transaction do
